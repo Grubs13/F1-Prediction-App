@@ -1,0 +1,93 @@
+{
+  "baseline_eval_objective": 0.8334778652763748,
+  "baseline_eval_summary": {
+    "mean_average_precision_at_10": 0.564042328042328,
+    "mean_top10_rank_error": 3.046153846153846,
+    "points_capture": 0.8904290429042907,
+    "points_weighted_ndcg_at_10": 0.6938644220659126,
+    "races": 15.0,
+    "top10_exact_match_rate": 0.0,
+    "top10_f1": 0.7,
+    "top10_precision": 0.7,
+    "top10_recall": 0.7,
+    "winner_accuracy": 0.0,
+    "winner_log_loss": 2.3985263772262893
+  },
+  "baseline_tuning_summary": {
+    "mean_average_precision_at_10": 0.6386888227513228,
+    "mean_top10_rank_error": 2.5431309904153356,
+    "points_capture": 0.860973597359736,
+    "points_weighted_ndcg_at_10": 0.7996813430148034,
+    "races": 24.0,
+    "top10_exact_match_rate": 0.0,
+    "top10_f1": 0.6958333333333333,
+    "top10_precision": 0.6958333333333333,
+    "top10_recall": 0.6958333333333333,
+    "winner_accuracy": 0.25,
+    "winner_log_loss": 1.9098006696403702
+  },
+  "baseline_weights": {
+    "circuit_history": 0.08,
+    "constructor_elo": 0.24,
+    "driver_elo": 0.36,
+    "odds": 0.18,
+    "recent_form": 0.16,
+    "season_points": 0.08,
+    "weather": 0.04
+  },
+  "eval_seasons": [
+    2026
+  ],
+  "method": "coordinate_search",
+  "objective": "(1 - mean_average_precision_at_10) + (1 - points_weighted_ndcg_at_10) + 0.03 * mean_top10_rank_error",
+  "selected_model": "baseline",
+  "selected_weights": {
+    "circuit_history": 0.08,
+    "constructor_elo": 0.24,
+    "driver_elo": 0.36,
+    "odds": 0.18,
+    "recent_form": 0.16,
+    "season_points": 0.08,
+    "weather": 0.04
+  },
+  "trials": 99,
+  "tuned_eval_objective": 0.8453714364704727,
+  "tuned_eval_summary": {
+    "mean_average_precision_at_10": 0.5547619047619048,
+    "mean_top10_rank_error": 3.035532994923858,
+    "points_capture": 0.8844884488448846,
+    "points_weighted_ndcg_at_10": 0.6909326486153382,
+    "races": 15.0,
+    "top10_exact_match_rate": 0.0,
+    "top10_f1": 0.6866666666666666,
+    "top10_precision": 0.6866666666666666,
+    "top10_recall": 0.6866666666666666,
+    "winner_accuracy": 0.0,
+    "winner_log_loss": 2.511286851523667
+  },
+  "tuned_tuning_summary": {
+    "mean_average_precision_at_10": 0.6527678571428571,
+    "mean_top10_rank_error": 2.538961038961039,
+    "points_capture": 0.8663366336633663,
+    "points_weighted_ndcg_at_10": 0.8102368912831874,
+    "races": 24.0,
+    "top10_exact_match_rate": 0.0,
+    "top10_f1": 0.7166666666666665,
+    "top10_precision": 0.7166666666666665,
+    "top10_recall": 0.7166666666666665,
+    "winner_accuracy": 0.3333333333333333,
+    "winner_log_loss": 1.8026669151377355
+  },
+  "tuned_weights": {
+    "circuit_history": 0.0,
+    "constructor_elo": 0.24,
+    "driver_elo": 0.72,
+    "odds": 0.18,
+    "recent_form": 0.16,
+    "season_points": 0.08,
+    "weather": 0.04
+  },
+  "tuning_seasons": [
+    2025
+  ]
+}

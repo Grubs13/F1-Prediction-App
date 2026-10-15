@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RaceIQ Stats</title>
+    <link rel="stylesheet" href="./styles.css?v=4">
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Primary">
+        <div class="brand">
+          <div class="brand-mark">R</div>
+          <div>
+            <strong>RaceIQ</strong>
+            <span>F1 predictor</span>
+          </div>
+        </div>
+        <nav class="nav-list" aria-label="Current sections">
+          <a href="./index.html"><span>Dashboard</span><b>10</b></a>
+          <a class="active" href="./stats.html"><span>Race Stats</span></a>
+          <a href="#model"><span>Model output</span></a>
+        </nav>
+        <div class="sidebar-note">
+          <span>Stats refreshed</span>
+          <strong id="lastUpdated">Loading</strong>
+        </div>
+      </aside>
+
+      <main class="main">
+        <div class="commandbar">
+          <div class="report-source">Reading from <strong>reports/backtest_predictions.csv</strong></div>
+        </div>
+
+        <header class="topbar">
+          <div>
+            <span class="eyebrow">Historical Results</span>
+            <h1>Race stats</h1>
+          </div>
+          <div class="topbar-actions">
+            <a class="secondary-button" href="./index.html">Forecast</a>
+            <button class="primary-button" type="button" id="refreshButton">Refresh</button>
+          </div>
+        </header>
+
+        <section class="stats-toolbar" aria-label="Stats filters">
+          <label>
+            <span>Season</span>
+            <select id="seasonSelect"></select>
+          </label>
+          <label>
+            <span>Driver</span>
+            <select id="driverSelect"></select>
+          </label>
+          <label>
+            <span>Track</span>
+            <select id="trackSelect"></select>
+          </label>
+          <label>
+            <span>Race</span>
+            <select id="raceSelect"></select>
+          </label>
+        </section>
+
+        <section class="metric-grid stats-metrics" aria-label="Season model summary">
+          <article class="metric-card">
+            <span>Points Captured</span>
+            <strong id="pointsCapture">--</strong>
+            <small>Actual points inside model top 10</small>
+          </article>
+          <article class="metric-card">
+            <span>Top-10 Precision</span>
+            <strong id="top10Precision">--</strong>
+            <small>Predicted points finishers that scored</small>
+          </article>
+          <article class="metric-card">
+            <span>Avg Rank Delta</span>
+            <strong id="avgRankDelta">--</strong>
+            <small>Absolute model rank versus finish</small>
+          </article>
+        </section>
+
+        <section class="content-grid stats-grid">
+          <div class="panel">
+            <div class="panel-head">
+              <div>
+                <span class="eyebrow">Season Form</span>
+                <h3 id="driverTitle">Driver results</h3>
+              </div>
+            </div>
+            <div class="stat-strip" id="driverSummary"></div>
+            <div class="table-wrap compact-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Round</th>
+                    <th>Race</th>
+                    <th>Team</th>
+                    <th>Finish</th>
+                    <th>Points</th>
+                    <th>Model Rank</th>
+                    <th>Delta</th>
+                    <th>Top-10</th>
+                  </tr>
+                </thead>
+                <tbody id="driverRows"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-head">
+              <div>
+                <span class="eyebrow">Track By Year</span>
+                <h3 id="trackTitle">Race winners</h3>
+              </div>
+            </div>
+            <div class="table-wrap compact-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Season</th>
+                    <th>Race</th>
+                    <th>Winner</th>
+                    <th>Podium</th>
+                    <th>Model Pick</th>
+                    <th>Winner Delta</th>
+                  </tr>
+                </thead>
+                <tbody id="trackRows"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel" id="model">
+          <div class="panel-head table-head">
+            <div>
+              <span class="eyebrow">Model Versus Actual</span>
+              <h3 id="modelTitle">Race comparison</h3>
+            </div>
+            <div class="prediction-meta">
+              <span class="input-badge" id="raceAccuracy">--</span>
+              <div class="legend">
+                <span><i class="top10-dot"></i> Correct top 10</span>
+                <span><i class="miss-dot"></i> Missed top 10</span>
+              </div>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Model</th>
+                  <th>Driver</th>
+                  <th>Team</th>
+                  <th>Actual</th>
+                  <th>Delta</th>
+                  <th>Top-10 Prob.</th>
+                  <th>Win Prob.</th>
+                  <th>Points</th>
+                </tr>
+              </thead>
+              <tbody id="modelRows"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./stats.js?v=4"></script>
+  </body>
+</html>

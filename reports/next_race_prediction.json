@@ -1,0 +1,89 @@
+{
+  "date": "2026-10-11",
+  "predicted_top10": [
+    {
+      "constructor_id": "red_bull",
+      "driver_code": "VER",
+      "rank": 1,
+      "score": 0.8726501468759418,
+      "top10_probability": 0.9794459202877825
+    },
+    {
+      "constructor_id": "ferrari",
+      "driver_code": "LEC",
+      "rank": 2,
+      "score": 0.8355633571210282,
+      "top10_probability": 0.9725414007851907
+    },
+    {
+      "constructor_id": "mercedes",
+      "driver_code": "RUS",
+      "rank": 3,
+      "score": 0.8260619272224691,
+      "top10_probability": 0.9704369688328475
+    },
+    {
+      "constructor_id": "ferrari",
+      "driver_code": "HAM",
+      "rank": 4,
+      "score": 0.8209722447700537,
+      "top10_probability": 0.9692461781790686
+    },
+    {
+      "constructor_id": "mclaren",
+      "driver_code": "NOR",
+      "rank": 5,
+      "score": 0.8137940703241134,
+      "top10_probability": 0.9674875342979604
+    },
+    {
+      "constructor_id": "mercedes",
+      "driver_code": "ANT",
+      "rank": 6,
+      "score": 0.8099010774137428,
+      "top10_probability": 0.9664934966892544
+    },
+    {
+      "constructor_id": "mclaren",
+      "driver_code": "PIA",
+      "rank": 7,
+      "score": 0.6777326368457246,
+      "top10_probability": 0.909256261493422
+    },
+    {
+      "constructor_id": "red_bull",
+      "driver_code": "HAD",
+      "rank": 8,
+      "score": 0.6008019059084558,
+      "top10_probability": 0.8441112450395845
+    },
+    {
+      "constructor_id": "rb",
+      "driver_code": "LAW",
+      "rank": 9,
+      "score": 0.4855317888047905,
+      "top10_probability": 0.682867399581925
+    },
+    {
+      "constructor_id": "rb",
+      "driver_code": "LIN",
+      "rank": 10,
+      "score": 0.38965919975957786,
+      "top10_probability": 0.5
+    }
+  ],
+  "qualifying_results_used": false,
+  "race_name": "Singapore Grand Prix",
+  "round": 17,
+  "season": 2026,
+  "sprint_qualifying_results_used": true,
+  "sprint_race_results_used": true,
+  "generated_at": "2026-10-10T15:04:35.856232+00:00",
+  "stage": "After sprint race",
+  "final_weather_update": true,
+  "input_fingerprint": "ebe0e8ff8abe0037e8bf9c16ad811f78edbdf678659baed3998673caa09675bf",
+  "sprint_scheduled": true,
+  "top10_path": "/reports/versions/2026-17/20261010T150435856232Z/next_race_top10_prediction.csv",
+  "weather_path": "/reports/versions/2026-17/20261010T150435856232Z/prediction_weather.csv",
+  "weather_warning": null
+}

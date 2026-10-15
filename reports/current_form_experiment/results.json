@@ -1,0 +1,2289 @@
+{
+  "method": "Walk-forward: predict before updating GP result; settings chosen on 2025 only.",
+  "training_start": 2023,
+  "tuning_season": 2025,
+  "evaluation_season": 2026,
+  "race_counts": {
+    "2023": 22,
+    "2024": 24,
+    "2025": 24,
+    "2026": 16
+  },
+  "sprint_coverage": {
+    "2025": {
+      "qualifying": 0,
+      "race": 0
+    },
+    "2026": {
+      "qualifying": 0,
+      "race": 0
+    }
+  },
+  "limitations": [
+    "Cached GP entrant list is known retrospectively.",
+    "Historical weather uses observed race-day precipitation, not archived pre-race forecasts.",
+    "Only cached sprint classifications are used; absent cache contributes no sprint signal.",
+    "2026 was already inspected to motivate these changes, so this is a retrospective holdout, not an untouched prospective test."
+  ],
+  "input_sha256": "248910a67f29aa667db8fd67beef913f2641a7ea3bf4d4b5e59e9c72d3699644",
+  "weather_sha256": "433a99254170c86098a41aa775c1052448cdf180fab55d8da401783510e075ea",
+  "upcoming_baseline_matches_published": true,
+  "trials": [
+    {
+      "family": "baseline",
+      "config": {
+        "shift": 0.0,
+        "retention": 1.0,
+        "relative": false
+      },
+      "summary": {
+        "races": 24.0,
+        "top10_precision": 0.6958333333333333,
+        "top10_recall": 0.6958333333333333,
+        "top10_f1": 0.6958333333333333,
+        "top10_exact_match_rate": 0.0,
+        "mean_average_precision_at_10": 0.6386888227513228,
+        "points_weighted_ndcg_at_10": 0.7996813430148034,
+        "points_capture": 0.860973597359736,
+        "mean_top10_rank_error": 2.5431309904153356,
+        "winner_accuracy": 0.25,
+        "winner_log_loss": 1.9098006696403702
+      },
+      "objective": 0.6379237639463339
+    },
+    {
+      "family": "stronger_recent_form",
+      "config": {
+        "shift": 0.06,
+        "retention": 1.0,
+        "relative": false
+      },
+      "summary": {
+        "races": 24.0,
+        "top10_precision": 0.6958333333333333,
+        "top10_recall": 0.6958333333333333,
+        "top10_f1": 0.6958333333333333,
+        "top10_exact_match_rate": 0.0,
+        "mean_average_precision_at_10": 0.6375595238095239,
+        "points_weighted_ndcg_at_10": 0.796901629570816,
+        "points_capture": 0.8551980198019802,
+        "mean_top10_rank_error": 2.562300319488818,
+        "winner_accuracy": 0.25,
+        "winner_log_loss": 1.8960648435247103
+      },
+      "objective": 0.6424078562043247
+    },
+    {
+      "family": "stronger_recent_form",
+      "config": {
+        "shift": 0.12,
+        "retention": 1.0,
+        "relative": false
+      },
+      "summary": {
+        "races": 24.0,
+        "top10_precision": 0.6875,
+        "top10_recall": 0.6875,
+        "top10_f1": 0.6875,
+        "top10_exact_match_rate": 0.0,
+        "mean_average_precision_at_10": 0.6301488095238097,
+        "points_weighted_ndcg_at_10": 0.7892819501669154,
+        "points_capture": 0.8518976897689771,
+        "mean_top10_rank_error": 2.5587301587301585,
+        "winner_accuracy": 0.25,
+        "winner_log_loss": 1.8840750537845719
+      },
+      "objective": 0.6573311450711796
+    },
+    {
+      "family": "stronger_recent_form",
+      "config": {
+        "shift": 0.18,
+        "retention": 1.0,
+        "relative": false
+      },
+      "summary": {
+        "races": 24.0,
+        "top10_precision": 0.6833333333333335,
+        "top10_recall": 0.6833333333333335,
+        "top10_f1": 0.6833333333333335,
+        "top10_exact_match_rate": 0.0,
+        "mean_average_precision_at_10": 0.6284689153439154,
+        "points_weighted_ndcg_at_10": 0.7859369930465995,
+        "points_capture": 0.8428217821782179,
+        "mean_top10_rank_error": 2.569620253164557,
+        "winner_accuracy": 0.20833333333333334,
+        "winner_log_loss": 1.873793124567495
+      },
+      "objective": 0.6626826992044219
+    },
+    {
+      "family": "seasonal_elo_decay",
+      "config": {
+        "shift": 0.0,
+        "retention": 0.75,
+        "relative": false
+      },
+      "summary": {
+        "races": 24.0,
+        "top10_precision": 0.6958333333333333,
+        "top10_recall": 0.6958333333333333,
+        "top10_f1": 0.6958333333333333,
+        "top10_exact_match_rate": 0.0,
+        "mean_average_precision_at_10": 0.6334391534391534,
+        "points_weighted_ndcg_at_10": 0.7902272129860813,
+        "points_capture": 0.8584983498349836,
+        "mean_top10_rank_error": 2.5814696485623,
+        "winner_accuracy": 0.25,
+        "winner_log_loss": 1.9494682068474256
+      },
+      "objective": 0.6537777230316343
+    },
+    {
+      "family": "seasonal_elo_decay",
+      "config": {
+        "shift": 0.0,
+        "retention": 0.5,
+        "relative": false
+      },
+      "summary": {
+        "races": 24.0,
+        "top10_precision": 0.6916666666666665,
+        "top10_recall": 0.6916666666666665,
+        "top10_f1": 0.6916666666666665,
+        "top10_exact_match_rate": 0.0,
+        "mean_average_precision_at_10": 0.6322420634920635,
+        "points_weighted_ndcg_at_10": 0.788406182847723,
+        "points_capture": 0.8551980198019802,
+        "mean_top10_rank_error": 2.5987261146496814,
+        "winner_accuracy": 0.20833333333333334,
+        "winner_log_loss": 2.0007846576684343
+      },
+      "objective": 0.657313537099704
+    },
+    {
+      "family": "seasonal_elo_decay",
+      "config": {
+        "shift": 0.0,
+        "retention": 0.25,
+        "relative": false
+      },
+      "summary": {
+        "races": 24.0,
+        "top10_precision": 0.6958333333333332,
+        "top10_recall": 0.6958333333333332,
+        "top10_f1": 0.6958333333333332,
+        "top10_exact_match_rate": 0.0,
+        "mean_average_precision_at_10": 0.6353902116402116,
+        "points_weighted_ndcg_at_10": 0.7923259951089635,
+        "points_capture": 0.8527227722772278,
+        "mean_top10_rank_error": 2.587859424920128,
+        "winner_accuracy": 0.25,
+        "winner_log_loss": 2.060396209146105
+      },
+      "objective": 0.6499195759984288
+    },
+    {
+      "family": "relative_season_points",
+      "config": {
+        "shift": 0.0,
+        "retention": 1.0,
+        "relative": true
+      },
+      "summary": {
+        "races": 24.0,
+        "top10_precision": 0.6958333333333333,
+        "top10_recall": 0.6958333333333333,
+        "top10_f1": 0.6958333333333333,
+        "top10_exact_match_rate": 0.0,
+        "mean_average_precision_at_10": 0.6365062830687831,
+        "points_weighted_ndcg_at_10": 0.7930152774066586,
+        "points_capture": 0.860973597359736,
+        "mean_top10_rank_error": 2.549520766773163,
+        "winner_accuracy": 0.20833333333333334,
+        "winner_log_loss": 1.8859736962102824
+      },
+      "objective": 0.6469640625277533
+    },
+    {
+      "family": "combined",
+      "config": {
+        "shift": 0.06,
+        "retention": 0.75,
+        "relative": true
+      },
+      "summary": {
+        "races": 24.0,
+        "top10_precision": 0.6916666666666665,
+        "top10_recall": 0.6916666666666665,
+        "top10_f1": 0.6916666666666665,
+        "top10_exact_match_rate": 0.0,
+        "mean_average_precision_at_10": 0.6343667328042327,
+        "points_weighted_ndcg_at_10": 0.7922235569089136,
+        "points_capture": 0.8535478547854787,
+        "mean_top10_rank_error": 2.56687898089172,
+        "winner_accuracy": 0.25,
+        "winner_log_loss": 1.9061684993054968
+      },
+      "objective": 0.6504160797136054
+    },
+    {
+      "family": "combined",
+      "config": {
+        "shift": 0.06,
+        "retention": 0.5,
+        "relative": true
+      },
+      "summary": {
+        "races": 24.0,
+        "top10_precision": 0.6999999999999998,
+        "top10_recall": 0.6999999999999998,
+        "top10_f1": 0.6999999999999998,
+        "top10_exact_match_rate": 0.0,
+        "mean_average_precision_at_10": 0.6380423280423281,
+        "points_weighted_ndcg_at_10": 0.790430823771155,
+        "points_capture": 0.8576732673267328,
+        "mean_top10_rank_error": 2.58974358974359,
+        "winner_accuracy": 0.20833333333333334,
+        "winner_log_loss": 1.947147854937625
+      },
+      "objective": 0.6492191558788246
+    },
+    {
+      "family": "combined",
+      "config": {
+        "shift": 0.06,
+        "retention": 0.25,
+        "relative": true
+      },
+      "summary": {
+        "races": 24.0,
+        "top10_precision": 0.6958333333333332,
+        "top10_recall": 0.6958333333333332,
+        "top10_f1": 0.6958333333333332,
+        "top10_exact_match_rate": 0.0,
+        "mean_average_precision_at_10": 0.6358664021164021,
+        "points_weighted_ndcg_at_10": 0.7953868579425452,
+        "points_capture": 0.8506600660066009,
+        "mean_top10_rank_error": 2.562300319488818,
+        "winner_accuracy": 0.16666666666666666,
+        "winner_log_loss": 1.9940700481305351
+      },
+      "objective": 0.6456157495257173
+    },
+    {
+      "family": "combined",
+      "config": {
+        "shift": 0.12,
+        "retention": 0.75,
+        "relative": true
+      },
+      "summary": {
+        "races": 24.0,
+        "top10_precision": 0.6916666666666665,
+        "top10_recall": 0.6916666666666665,
+        "top10_f1": 0.6916666666666665,
+        "top10_exact_match_rate": 0.0,
+        "mean_average_precision_at_10": 0.6341071428571429,
+        "points_weighted_ndcg_at_10": 0.7898026639908261,
+        "points_capture": 0.8535478547854787,
+        "mean_top10_rank_error": 2.5605095541401273,
+        "winner_accuracy": 0.20833333333333334,
+        "winner_log_loss": 1.8918972639505058
+      },
+      "objective": 0.6529054797762348
+    },
+    {
+      "family": "combined",
+      "config": {
+        "shift": 0.12,
+        "retention": 0.5,
+        "relative": true
+      },
+      "summary": {
+        "races": 24.0,
+        "top10_precision": 0.6958333333333332,
+        "top10_recall": 0.6958333333333332,
+        "top10_f1": 0.6958333333333332,
+        "top10_exact_match_rate": 0.0,
+        "mean_average_precision_at_10": 0.6366187169312169,
+        "points_weighted_ndcg_at_10": 0.7955455473917931,
+        "points_capture": 0.8584983498349836,
+        "mean_top10_rank_error": 2.5814696485623,
+        "winner_accuracy": 0.20833333333333334,
+        "winner_log_loss": 1.9270143914819924
+      },
+      "objective": 0.6452798251338591
+    },
+    {
+      "family": "combined",
+      "config": {
+        "shift": 0.12,
+        "retention": 0.25,
+        "relative": true
+      },
+      "summary": {
+        "races": 24.0,
+        "top10_precision": 0.6916666666666665,
+        "top10_recall": 0.6916666666666665,
+        "top10_f1": 0.6916666666666665,
+        "top10_exact_match_rate": 0.0,
+        "mean_average_precision_at_10": 0.6319080687830687,
+        "points_weighted_ndcg_at_10": 0.7966532362026496,
+        "points_capture": 0.8556105610561059,
+        "mean_top10_rank_error": 2.5286624203821657,
+        "winner_accuracy": 0.20833333333333334,
+        "winner_log_loss": 1.9662979203305078
+      },
+      "objective": 0.6472985676257467
+    },
+    {
+      "family": "combined",
+      "config": {
+        "shift": 0.18,
+        "retention": 0.75,
+        "relative": true
+      },
+      "summary": {
+        "races": 24.0,
+        "top10_precision": 0.6999999999999997,
+        "top10_recall": 0.6999999999999997,
+        "top10_f1": 0.6999999999999997,
+        "top10_exact_match_rate": 0.0,
+        "mean_average_precision_at_10": 0.6396279761904761,
+        "points_weighted_ndcg_at_10": 0.7963251129271663,
+        "points_capture": 0.8572607260726074,
+        "mean_top10_rank_error": 2.5705128205128207,
+        "winner_accuracy": 0.20833333333333334,
+        "winner_log_loss": 1.8794349612498182
+      },
+      "objective": 0.6411622954977422
+    },
+    {
+      "family": "combined",
+      "config": {
+        "shift": 0.18,
+        "retention": 0.5,
+        "relative": true
+      },
+      "summary": {
+        "races": 24.0,
+        "top10_precision": 0.6916666666666664,
+        "top10_recall": 0.6916666666666664,
+        "top10_f1": 0.6916666666666664,
+        "top10_exact_match_rate": 0.0,
+        "mean_average_precision_at_10": 0.6326372354497354,
+        "points_weighted_ndcg_at_10": 0.8003423686068293,
+        "points_capture": 0.8556105610561059,
+        "mean_top10_rank_error": 2.5477707006369426,
+        "winner_accuracy": 0.25,
+        "winner_log_loss": 1.909177724555075
+      },
+      "objective": 0.6434535169625436
+    },
+    {
+      "family": "combined",
+      "config": {
+        "shift": 0.18,
+        "retention": 0.25,
+        "relative": true
+      },
+      "summary": {
+        "races": 24.0,
+        "top10_precision": 0.6874999999999999,
+        "top10_recall": 0.6874999999999999,
+        "top10_f1": 0.6874999999999999,
+        "top10_exact_match_rate": 0.0,
+        "mean_average_precision_at_10": 0.6270419973544973,
+        "points_weighted_ndcg_at_10": 0.7943259657769594,
+        "points_capture": 0.8506600660066009,
+        "mean_top10_rank_error": 2.546031746031746,
+        "winner_accuracy": 0.20833333333333334,
+        "winner_log_loss": 1.941621862170833
+      },
+      "objective": 0.6550129892494957
+    }
+  ],
+  "models": {
+    "baseline": {
+      "config": {
+        "shift": 0.0,
+        "retention": 1.0,
+        "relative": false
+      },
+      "tuning_2025": {
+        "races": 24.0,
+        "top10_precision": 0.6958333333333333,
+        "top10_recall": 0.6958333333333333,
+        "top10_f1": 0.6958333333333333,
+        "top10_exact_match_rate": 0.0,
+        "mean_average_precision_at_10": 0.6386888227513228,
+        "points_weighted_ndcg_at_10": 0.7996813430148034,
+        "points_capture": 0.860973597359736,
+        "mean_top10_rank_error": 2.5431309904153356,
+        "winner_accuracy": 0.25,
+        "winner_log_loss": 1.9098006696403702
+      },
+      "evaluation_2026": {
+        "races": 16.0,
+        "top10_precision": 0.7125,
+        "top10_recall": 0.7125,
+        "top10_f1": 0.7125,
+        "top10_exact_match_rate": 0.0,
+        "mean_average_precision_at_10": 0.576108630952381,
+        "points_weighted_ndcg_at_10": 0.6908003833786759,
+        "points_capture": 0.89480198019802,
+        "mean_top10_rank_error": 3.0679611650485437,
+        "winner_accuracy": 0.0,
+        "winner_log_loss": 2.382722115138126
+      },
+      "per_race": [
+        {
+          "round": 1,
+          "race_name": "Australian Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.6,
+          "top10_recall": 0.6,
+          "top10_f1": 0.6,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.524047619047619,
+          "points_weighted_ndcg_at_10": 0.679765525462913,
+          "points_capture": 0.8712871287128713,
+          "mean_top10_rank_error": 3.142857142857143,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.2801079461584446,
+          "kimi_predicted_rank": 7,
+          "kimi_actual_rank": 2
+        },
+        {
+          "round": 2,
+          "race_name": "Chinese Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.6,
+          "top10_recall": 0.6,
+          "top10_f1": 0.6,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.2876984126984127,
+          "points_weighted_ndcg_at_10": 0.4602347159511487,
+          "points_capture": 0.7524752475247525,
+          "mean_top10_rank_error": 4.285714285714286,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.9726144775889938,
+          "kimi_predicted_rank": 7,
+          "kimi_actual_rank": 1
+        },
+        {
+          "round": 3,
+          "race_name": "Japanese Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.7,
+          "top10_recall": 0.7,
+          "top10_f1": 0.7,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.7,
+          "points_weighted_ndcg_at_10": 0.6865857654671746,
+          "points_capture": 0.9108910891089109,
+          "mean_top10_rank_error": 2.4615384615384617,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.8268878197757203,
+          "kimi_predicted_rank": 7,
+          "kimi_actual_rank": 1
+        },
+        {
+          "round": 4,
+          "race_name": "Miami Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.8,
+          "top10_recall": 0.8,
+          "top10_f1": 0.8000000000000002,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.78,
+          "points_weighted_ndcg_at_10": 0.7787387401056534,
+          "points_capture": 0.9306930693069307,
+          "mean_top10_rank_error": 2.3333333333333335,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.7227550371249425,
+          "kimi_predicted_rank": 7,
+          "kimi_actual_rank": 1
+        },
+        {
+          "round": 5,
+          "race_name": "Canadian Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.6,
+          "top10_recall": 0.6,
+          "top10_f1": 0.6,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.3296428571428571,
+          "points_weighted_ndcg_at_10": 0.5492635977515636,
+          "points_capture": 0.8118811881188119,
+          "mean_top10_rank_error": 4.0,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.488229790556135,
+          "kimi_predicted_rank": 7,
+          "kimi_actual_rank": 1
+        },
+        {
+          "round": 6,
+          "race_name": "Monaco Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.4,
+          "top10_recall": 0.4,
+          "top10_f1": 0.4000000000000001,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.14619047619047618,
+          "points_weighted_ndcg_at_10": 0.405755533917879,
+          "points_capture": 0.693069306930693,
+          "mean_top10_rank_error": 4.625,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.64906898248155,
+          "kimi_predicted_rank": 7,
+          "kimi_actual_rank": 1
+        },
+        {
+          "round": 7,
+          "race_name": "Barcelona Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.7,
+          "top10_recall": 0.7,
+          "top10_f1": 0.7,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.5714285714285714,
+          "points_weighted_ndcg_at_10": 0.7836872971055446,
+          "points_capture": 0.9108910891089109,
+          "mean_top10_rank_error": 2.769230769230769,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.100542687814226,
+          "kimi_predicted_rank": 6,
+          "kimi_actual_rank": 16
+        },
+        {
+          "round": 8,
+          "race_name": "Austrian Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.9,
+          "top10_recall": 0.9,
+          "top10_f1": 0.9,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.89,
+          "points_weighted_ndcg_at_10": 0.8917675254374315,
+          "points_capture": 0.9900990099009901,
+          "mean_top10_rank_error": 2.0,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.076046749743304,
+          "kimi_predicted_rank": 7,
+          "kimi_actual_rank": 3
+        },
+        {
+          "round": 9,
+          "race_name": "British Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.6,
+          "top10_recall": 0.6,
+          "top10_f1": 0.6,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.36583333333333334,
+          "points_weighted_ndcg_at_10": 0.6047398762800037,
+          "points_capture": 0.8514851485148515,
+          "mean_top10_rank_error": 3.5714285714285716,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.4162540910181427,
+          "kimi_predicted_rank": 7,
+          "kimi_actual_rank": 15
+        },
+        {
+          "round": 10,
+          "race_name": "Belgian Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.8,
+          "top10_recall": 0.8,
+          "top10_f1": 0.8000000000000002,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.691547619047619,
+          "points_weighted_ndcg_at_10": 0.7769212684815962,
+          "points_capture": 0.9504950495049505,
+          "mean_top10_rank_error": 2.6666666666666665,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.745369350704849,
+          "kimi_predicted_rank": 7,
+          "kimi_actual_rank": 1
+        },
+        {
+          "round": 11,
+          "race_name": "Hungarian Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.9,
+          "top10_recall": 0.9,
+          "top10_f1": 0.9,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.8521031746031745,
+          "points_weighted_ndcg_at_10": 0.8536417141181961,
+          "points_capture": 0.9801980198019802,
+          "mean_top10_rank_error": 2.5454545454545454,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.15922597761831,
+          "kimi_predicted_rank": 7,
+          "kimi_actual_rank": 3
+        },
+        {
+          "round": 12,
+          "race_name": "Dutch Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.7,
+          "top10_recall": 0.7,
+          "top10_f1": 0.7,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.5282142857142857,
+          "points_weighted_ndcg_at_10": 0.7093392591835309,
+          "points_capture": 0.9306930693069307,
+          "mean_top10_rank_error": 2.3076923076923075,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 1.936561422258259,
+          "kimi_predicted_rank": 7,
+          "kimi_actual_rank": 2
+        },
+        {
+          "round": 13,
+          "race_name": "Italian Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.7,
+          "top10_recall": 0.7,
+          "top10_f1": 0.7,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.5684920634920634,
+          "points_weighted_ndcg_at_10": 0.7237163129205219,
+          "points_capture": 0.9108910891089109,
+          "mean_top10_rank_error": 2.769230769230769,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.4028885208329607,
+          "kimi_predicted_rank": 7,
+          "kimi_actual_rank": 1
+        },
+        {
+          "round": 14,
+          "race_name": "Spanish Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.8,
+          "top10_recall": 0.8,
+          "top10_f1": 0.8000000000000002,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.7254365079365078,
+          "points_weighted_ndcg_at_10": 0.7989087773089365,
+          "points_capture": 0.9306930693069307,
+          "mean_top10_rank_error": 2.5,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.219113934664203,
+          "kimi_predicted_rank": 5,
+          "kimi_actual_rank": 1
+        },
+        {
+          "round": 15,
+          "race_name": "Azerbaijan Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.7,
+          "top10_recall": 0.7,
+          "top10_f1": 0.7,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.5000000000000001,
+          "points_weighted_ndcg_at_10": 0.7049004214965963,
+          "points_capture": 0.9306930693069307,
+          "mean_top10_rank_error": 2.769230769230769,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 1.9822288700543027,
+          "kimi_predicted_rank": 3,
+          "kimi_actual_rank": 5
+        },
+        {
+          "round": 16,
+          "race_name": "Bahrain Grand Prix in Malaysia",
+          "races": 1.0,
+          "top10_precision": 0.9,
+          "top10_recall": 0.9,
+          "top10_f1": 0.9,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.7571031746031747,
+          "points_weighted_ndcg_at_10": 0.6448398030701245,
+          "points_capture": 0.9603960396039604,
+          "mean_top10_rank_error": 3.4545454545454546,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.145658183815676,
+          "kimi_predicted_rank": 4,
+          "kimi_actual_rank": 2
+        }
+      ],
+      "upcoming_top10": [
+        {
+          "driver": "VER",
+          "rank": 1,
+          "score": 0.8726501468759418
+        },
+        {
+          "driver": "LEC",
+          "rank": 2,
+          "score": 0.8355633571210282
+        },
+        {
+          "driver": "RUS",
+          "rank": 3,
+          "score": 0.8260619272224691
+        },
+        {
+          "driver": "HAM",
+          "rank": 4,
+          "score": 0.8209722447700537
+        },
+        {
+          "driver": "NOR",
+          "rank": 5,
+          "score": 0.8137940703241134
+        },
+        {
+          "driver": "ANT",
+          "rank": 6,
+          "score": 0.8099010774137428
+        },
+        {
+          "driver": "PIA",
+          "rank": 7,
+          "score": 0.6777326368457246
+        },
+        {
+          "driver": "HAD",
+          "rank": 8,
+          "score": 0.6008019059084558
+        },
+        {
+          "driver": "LAW",
+          "rank": 9,
+          "score": 0.4855317888047905
+        },
+        {
+          "driver": "LIN",
+          "rank": 10,
+          "score": 0.38965919975957786
+        }
+      ],
+      "paired_top10_hits": {
+        "more": 0,
+        "same": 16,
+        "fewer": 0,
+        "mean_delta": 0.0,
+        "bootstrap_95_interval": [
+          0.0,
+          0.0
+        ]
+      },
+      "kimi_summary": {
+        "mean_predicted_rank": 6.375,
+        "mean_absolute_rank_error": 5.375,
+        "predicted_wins": 0,
+        "correctly_predicted_wins": 0
+      }
+    },
+    "stronger_recent_form": {
+      "config": {
+        "shift": 0.06,
+        "retention": 1.0,
+        "relative": false
+      },
+      "tuning_2025": {
+        "races": 24.0,
+        "top10_precision": 0.6958333333333333,
+        "top10_recall": 0.6958333333333333,
+        "top10_f1": 0.6958333333333333,
+        "top10_exact_match_rate": 0.0,
+        "mean_average_precision_at_10": 0.6375595238095239,
+        "points_weighted_ndcg_at_10": 0.796901629570816,
+        "points_capture": 0.8551980198019802,
+        "mean_top10_rank_error": 2.562300319488818,
+        "winner_accuracy": 0.25,
+        "winner_log_loss": 1.8960648435247103
+      },
+      "evaluation_2026": {
+        "races": 16.0,
+        "top10_precision": 0.7125,
+        "top10_recall": 0.7125,
+        "top10_f1": 0.7125,
+        "top10_exact_match_rate": 0.0,
+        "mean_average_precision_at_10": 0.5824925595238096,
+        "points_weighted_ndcg_at_10": 0.6912113005970887,
+        "points_capture": 0.8892326732673269,
+        "mean_top10_rank_error": 3.0776699029126213,
+        "winner_accuracy": 0.0,
+        "winner_log_loss": 2.3511827476088714
+      },
+      "per_race": [
+        {
+          "round": 1,
+          "race_name": "Australian Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.6,
+          "top10_recall": 0.6,
+          "top10_f1": 0.6,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.524047619047619,
+          "points_weighted_ndcg_at_10": 0.679765525462913,
+          "points_capture": 0.8712871287128713,
+          "mean_top10_rank_error": 3.142857142857143,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.290147985287016,
+          "kimi_predicted_rank": 7,
+          "kimi_actual_rank": 2
+        },
+        {
+          "round": 2,
+          "race_name": "Chinese Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.6,
+          "top10_recall": 0.6,
+          "top10_f1": 0.6,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.2876984126984127,
+          "points_weighted_ndcg_at_10": 0.4602347159511487,
+          "points_capture": 0.7524752475247525,
+          "mean_top10_rank_error": 4.285714285714286,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.9000497602943307,
+          "kimi_predicted_rank": 7,
+          "kimi_actual_rank": 1
+        },
+        {
+          "round": 3,
+          "race_name": "Japanese Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.7,
+          "top10_recall": 0.7,
+          "top10_f1": 0.7,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.7,
+          "points_weighted_ndcg_at_10": 0.6831135763074893,
+          "points_capture": 0.9108910891089109,
+          "mean_top10_rank_error": 2.6153846153846154,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.7501048952376714,
+          "kimi_predicted_rank": 7,
+          "kimi_actual_rank": 1
+        },
+        {
+          "round": 4,
+          "race_name": "Miami Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.8,
+          "top10_recall": 0.8,
+          "top10_f1": 0.8000000000000002,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.78,
+          "points_weighted_ndcg_at_10": 0.7787387401056534,
+          "points_capture": 0.9306930693069307,
+          "mean_top10_rank_error": 2.3333333333333335,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.6369734843302712,
+          "kimi_predicted_rank": 7,
+          "kimi_actual_rank": 1
+        },
+        {
+          "round": 5,
+          "race_name": "Canadian Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.6,
+          "top10_recall": 0.6,
+          "top10_f1": 0.6,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.3196428571428571,
+          "points_weighted_ndcg_at_10": 0.4732391097272767,
+          "points_capture": 0.7227722772277227,
+          "mean_top10_rank_error": 4.0,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.3917559972619067,
+          "kimi_predicted_rank": 7,
+          "kimi_actual_rank": 1
+        },
+        {
+          "round": 6,
+          "race_name": "Monaco Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.4,
+          "top10_recall": 0.4,
+          "top10_f1": 0.4000000000000001,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.14619047619047618,
+          "points_weighted_ndcg_at_10": 0.405755533917879,
+          "points_capture": 0.693069306930693,
+          "mean_top10_rank_error": 4.625,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.4936267538359966,
+          "kimi_predicted_rank": 7,
+          "kimi_actual_rank": 1
+        },
+        {
+          "round": 7,
+          "race_name": "Barcelona Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.7,
+          "top10_recall": 0.7,
+          "top10_f1": 0.7,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.5830952380952381,
+          "points_weighted_ndcg_at_10": 0.8202491566305515,
+          "points_capture": 0.9108910891089109,
+          "mean_top10_rank_error": 2.769230769230769,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.0565652632278506,
+          "kimi_predicted_rank": 5,
+          "kimi_actual_rank": 16
+        },
+        {
+          "round": 8,
+          "race_name": "Austrian Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.9,
+          "top10_recall": 0.9,
+          "top10_f1": 0.9,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.9,
+          "points_weighted_ndcg_at_10": 0.8428722661269085,
+          "points_capture": 0.9900990099009901,
+          "mean_top10_rank_error": 1.8181818181818181,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.082837738056857,
+          "kimi_predicted_rank": 7,
+          "kimi_actual_rank": 3
+        },
+        {
+          "round": 9,
+          "race_name": "British Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.6,
+          "top10_recall": 0.6,
+          "top10_f1": 0.6,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.3896428571428572,
+          "points_weighted_ndcg_at_10": 0.6781215174819049,
+          "points_capture": 0.8514851485148515,
+          "mean_top10_rank_error": 3.7142857142857144,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.436709193381899,
+          "kimi_predicted_rank": 6,
+          "kimi_actual_rank": 15
+        },
+        {
+          "round": 10,
+          "race_name": "Belgian Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.8,
+          "top10_recall": 0.8,
+          "top10_f1": 0.8000000000000002,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.691547619047619,
+          "points_weighted_ndcg_at_10": 0.7769212684815962,
+          "points_capture": 0.9504950495049505,
+          "mean_top10_rank_error": 2.6666666666666665,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.660388300521777,
+          "kimi_predicted_rank": 7,
+          "kimi_actual_rank": 1
+        },
+        {
+          "round": 11,
+          "race_name": "Hungarian Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.9,
+          "top10_recall": 0.9,
+          "top10_f1": 0.9,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.8354365079365079,
+          "points_weighted_ndcg_at_10": 0.8414498365198942,
+          "points_capture": 0.9801980198019802,
+          "mean_top10_rank_error": 2.5454545454545454,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.254797987440783,
+          "kimi_predicted_rank": 7,
+          "kimi_actual_rank": 3
+        },
+        {
+          "round": 12,
+          "race_name": "Dutch Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.7,
+          "top10_recall": 0.7,
+          "top10_f1": 0.7,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.5282142857142857,
+          "points_weighted_ndcg_at_10": 0.6765499992739898,
+          "points_capture": 0.9306930693069307,
+          "mean_top10_rank_error": 2.4615384615384617,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 1.9510025069194747,
+          "kimi_predicted_rank": 7,
+          "kimi_actual_rank": 2
+        },
+        {
+          "round": 13,
+          "race_name": "Italian Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.7,
+          "top10_recall": 0.7,
+          "top10_f1": 0.7,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.6018253968253967,
+          "points_weighted_ndcg_at_10": 0.7630634248119711,
+          "points_capture": 0.9108910891089109,
+          "mean_top10_rank_error": 2.6153846153846154,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.3459199363051235,
+          "kimi_predicted_rank": 7,
+          "kimi_actual_rank": 1
+        },
+        {
+          "round": 14,
+          "race_name": "Spanish Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.8,
+          "top10_recall": 0.8,
+          "top10_f1": 0.8000000000000002,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.7254365079365078,
+          "points_weighted_ndcg_at_10": 0.7989087773089365,
+          "points_capture": 0.9306930693069307,
+          "mean_top10_rank_error": 2.5,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.1616107055000433,
+          "kimi_predicted_rank": 5,
+          "kimi_actual_rank": 1
+        },
+        {
+          "round": 15,
+          "race_name": "Azerbaijan Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.7,
+          "top10_recall": 0.7,
+          "top10_f1": 0.7,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.55,
+          "points_weighted_ndcg_at_10": 0.7337296498981386,
+          "points_capture": 0.9306930693069307,
+          "mean_top10_rank_error": 2.923076923076923,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 1.9830481434769813,
+          "kimi_predicted_rank": 1,
+          "kimi_actual_rank": 5
+        },
+        {
+          "round": 16,
+          "race_name": "Bahrain Grand Prix in Malaysia",
+          "races": 1.0,
+          "top10_precision": 0.9,
+          "top10_recall": 0.9,
+          "top10_f1": 0.9,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.7571031746031747,
+          "points_weighted_ndcg_at_10": 0.6466677115471682,
+          "points_capture": 0.9603960396039604,
+          "mean_top10_rank_error": 3.272727272727273,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.2233853106639656,
+          "kimi_predicted_rank": 3,
+          "kimi_actual_rank": 2
+        }
+      ],
+      "upcoming_top10": [
+        {
+          "driver": "VER",
+          "rank": 1,
+          "score": 0.864857483625773
+        },
+        {
+          "driver": "LEC",
+          "rank": 2,
+          "score": 0.8367959146071948
+        },
+        {
+          "driver": "RUS",
+          "rank": 3,
+          "score": 0.829164557018947
+        },
+        {
+          "driver": "ANT",
+          "rank": 4,
+          "score": 0.8244554984819211
+        },
+        {
+          "driver": "HAM",
+          "rank": 5,
+          "score": 0.823186845176486
+        },
+        {
+          "driver": "NOR",
+          "rank": 6,
+          "score": 0.8157514989180066
+        },
+        {
+          "driver": "PIA",
+          "rank": 7,
+          "score": 0.6705145142363662
+        },
+        {
+          "driver": "HAD",
+          "rank": 8,
+          "score": 0.6148192042898771
+        },
+        {
+          "driver": "LAW",
+          "rank": 9,
+          "score": 0.49050072049625987
+        },
+        {
+          "driver": "LIN",
+          "rank": 10,
+          "score": 0.3920118188547333
+        }
+      ],
+      "paired_top10_hits": {
+        "more": 0,
+        "same": 16,
+        "fewer": 0,
+        "mean_delta": 0.0,
+        "bootstrap_95_interval": [
+          0.0,
+          0.0
+        ]
+      },
+      "kimi_summary": {
+        "mean_predicted_rank": 6.0625,
+        "mean_absolute_rank_error": 5.5625,
+        "predicted_wins": 1,
+        "correctly_predicted_wins": 0
+      }
+    },
+    "seasonal_elo_decay": {
+      "config": {
+        "shift": 0.0,
+        "retention": 0.25,
+        "relative": false
+      },
+      "tuning_2025": {
+        "races": 24.0,
+        "top10_precision": 0.6958333333333332,
+        "top10_recall": 0.6958333333333332,
+        "top10_f1": 0.6958333333333332,
+        "top10_exact_match_rate": 0.0,
+        "mean_average_precision_at_10": 0.6353902116402116,
+        "points_weighted_ndcg_at_10": 0.7923259951089635,
+        "points_capture": 0.8527227722772278,
+        "mean_top10_rank_error": 2.587859424920128,
+        "winner_accuracy": 0.25,
+        "winner_log_loss": 2.060396209146105
+      },
+      "evaluation_2026": {
+        "races": 16.0,
+        "top10_precision": 0.7312500000000001,
+        "top10_recall": 0.7312500000000001,
+        "top10_f1": 0.7312500000000001,
+        "top10_exact_match_rate": 0.0,
+        "mean_average_precision_at_10": 0.5944419642857142,
+        "points_weighted_ndcg_at_10": 0.7173335834682765,
+        "points_capture": 0.9028465346534655,
+        "mean_top10_rank_error": 3.0049261083743843,
+        "winner_accuracy": 0.0625,
+        "winner_log_loss": 2.405415270380249
+      },
+      "per_race": [
+        {
+          "round": 1,
+          "race_name": "Australian Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.6,
+          "top10_recall": 0.6,
+          "top10_f1": 0.6,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.524047619047619,
+          "points_weighted_ndcg_at_10": 0.689373519301466,
+          "points_capture": 0.8712871287128713,
+          "mean_top10_rank_error": 3.142857142857143,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.5867051027924073,
+          "kimi_predicted_rank": 6,
+          "kimi_actual_rank": 2
+        },
+        {
+          "round": 2,
+          "race_name": "Chinese Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.5,
+          "top10_recall": 0.5,
+          "top10_f1": 0.5,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.24297619047619046,
+          "points_weighted_ndcg_at_10": 0.5125893173282464,
+          "points_capture": 0.7920792079207921,
+          "mean_top10_rank_error": 3.8666666666666667,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.7532213300660575,
+          "kimi_predicted_rank": 6,
+          "kimi_actual_rank": 1
+        },
+        {
+          "round": 3,
+          "race_name": "Japanese Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.7,
+          "top10_recall": 0.7,
+          "top10_f1": 0.7,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.7,
+          "points_weighted_ndcg_at_10": 0.6931872809242138,
+          "points_capture": 0.9108910891089109,
+          "mean_top10_rank_error": 2.6153846153846154,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.600766571661345,
+          "kimi_predicted_rank": 5,
+          "kimi_actual_rank": 1
+        },
+        {
+          "round": 4,
+          "race_name": "Miami Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.8,
+          "top10_recall": 0.8,
+          "top10_f1": 0.8000000000000002,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.788888888888889,
+          "points_weighted_ndcg_at_10": 0.7872816618830162,
+          "points_capture": 0.9306930693069307,
+          "mean_top10_rank_error": 2.3333333333333335,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.481698054687192,
+          "kimi_predicted_rank": 5,
+          "kimi_actual_rank": 1
+        },
+        {
+          "round": 5,
+          "race_name": "Canadian Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.6,
+          "top10_recall": 0.6,
+          "top10_f1": 0.6,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.35583333333333333,
+          "points_weighted_ndcg_at_10": 0.5710709619832114,
+          "points_capture": 0.7227722772277227,
+          "mean_top10_rank_error": 3.5714285714285716,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.2498397795770884,
+          "kimi_predicted_rank": 2,
+          "kimi_actual_rank": 1
+        },
+        {
+          "round": 6,
+          "race_name": "Monaco Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.5,
+          "top10_recall": 0.5,
+          "top10_f1": 0.5,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.2023015873015873,
+          "points_weighted_ndcg_at_10": 0.4813273807563237,
+          "points_capture": 0.7920792079207921,
+          "mean_top10_rank_error": 4.666666666666667,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.422900745639286,
+          "kimi_predicted_rank": 5,
+          "kimi_actual_rank": 1
+        },
+        {
+          "round": 7,
+          "race_name": "Barcelona Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.8,
+          "top10_recall": 0.8,
+          "top10_f1": 0.8000000000000002,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.5475396825396825,
+          "points_weighted_ndcg_at_10": 0.7275620973890267,
+          "points_capture": 0.9702970297029703,
+          "mean_top10_rank_error": 2.8333333333333335,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.2611159598804353,
+          "kimi_predicted_rank": 1,
+          "kimi_actual_rank": 16
+        },
+        {
+          "round": 8,
+          "race_name": "Austrian Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.9,
+          "top10_recall": 0.9,
+          "top10_f1": 0.9,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.9,
+          "points_weighted_ndcg_at_10": 0.8560327215234645,
+          "points_capture": 0.9900990099009901,
+          "mean_top10_rank_error": 1.8181818181818181,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.294099050675549,
+          "kimi_predicted_rank": 3,
+          "kimi_actual_rank": 3
+        },
+        {
+          "round": 9,
+          "race_name": "British Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.7,
+          "top10_recall": 0.7,
+          "top10_f1": 0.7,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.47297619047619055,
+          "points_weighted_ndcg_at_10": 0.6978407647188322,
+          "points_capture": 0.8613861386138614,
+          "mean_top10_rank_error": 3.8461538461538463,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.7156299858043695,
+          "kimi_predicted_rank": 2,
+          "kimi_actual_rank": 15
+        },
+        {
+          "round": 10,
+          "race_name": "Belgian Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.8,
+          "top10_recall": 0.8,
+          "top10_f1": 0.8000000000000002,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.6484920634920635,
+          "points_weighted_ndcg_at_10": 0.7549787548827611,
+          "points_capture": 0.9504950495049505,
+          "mean_top10_rank_error": 2.5,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.5151333639188787,
+          "kimi_predicted_rank": 6,
+          "kimi_actual_rank": 1
+        },
+        {
+          "round": 11,
+          "race_name": "Hungarian Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.9,
+          "top10_recall": 0.9,
+          "top10_f1": 0.9,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.8521031746031745,
+          "points_weighted_ndcg_at_10": 0.7641122353390349,
+          "points_capture": 0.9801980198019802,
+          "mean_top10_rank_error": 2.5454545454545454,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.557389718025564,
+          "kimi_predicted_rank": 3,
+          "kimi_actual_rank": 3
+        },
+        {
+          "round": 12,
+          "race_name": "Dutch Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.8,
+          "top10_recall": 0.8,
+          "top10_f1": 0.8000000000000002,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.6082142857142857,
+          "points_weighted_ndcg_at_10": 0.6701488835674133,
+          "points_capture": 0.9405940594059405,
+          "mean_top10_rank_error": 2.6666666666666665,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.2848960538173166,
+          "kimi_predicted_rank": 6,
+          "kimi_actual_rank": 2
+        },
+        {
+          "round": 13,
+          "race_name": "Italian Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.7,
+          "top10_recall": 0.7,
+          "top10_f1": 0.7,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.6018253968253967,
+          "points_weighted_ndcg_at_10": 0.8070176188090455,
+          "points_capture": 0.9108910891089109,
+          "mean_top10_rank_error": 2.6153846153846154,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.1590958019562776,
+          "kimi_predicted_rank": 4,
+          "kimi_actual_rank": 1
+        },
+        {
+          "round": 14,
+          "race_name": "Spanish Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.8,
+          "top10_recall": 0.8,
+          "top10_f1": 0.8000000000000002,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.7004365079365078,
+          "points_weighted_ndcg_at_10": 0.8842371108051,
+          "points_capture": 0.9306930693069307,
+          "mean_top10_rank_error": 2.3333333333333335,
+          "winner_accuracy": 1.0,
+          "winner_log_loss": 2.0115553019850787,
+          "kimi_predicted_rank": 1,
+          "kimi_actual_rank": 1
+        },
+        {
+          "round": 15,
+          "race_name": "Azerbaijan Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.7,
+          "top10_recall": 0.7,
+          "top10_f1": 0.7,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.6083333333333333,
+          "points_weighted_ndcg_at_10": 0.797150703210455,
+          "points_capture": 0.9306930693069307,
+          "mean_top10_rank_error": 2.923076923076923,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.1030509073753723,
+          "kimi_predicted_rank": 1,
+          "kimi_actual_rank": 5
+        },
+        {
+          "round": 16,
+          "race_name": "Bahrain Grand Prix in Malaysia",
+          "races": 1.0,
+          "top10_precision": 0.9,
+          "top10_recall": 0.9,
+          "top10_f1": 0.9,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.7571031746031747,
+          "points_weighted_ndcg_at_10": 0.7834263230708118,
+          "points_capture": 0.9603960396039604,
+          "mean_top10_rank_error": 2.909090909090909,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.4895465982217693,
+          "kimi_predicted_rank": 1,
+          "kimi_actual_rank": 2
+        }
+      ],
+      "upcoming_top10": [
+        {
+          "driver": "ANT",
+          "rank": 1,
+          "score": 0.7699321415434709
+        },
+        {
+          "driver": "VER",
+          "rank": 2,
+          "score": 0.7619792226804281
+        },
+        {
+          "driver": "HAM",
+          "rank": 3,
+          "score": 0.7446513090710901
+        },
+        {
+          "driver": "RUS",
+          "rank": 4,
+          "score": 0.7425298225141596
+        },
+        {
+          "driver": "LEC",
+          "rank": 5,
+          "score": 0.7410074744673147
+        },
+        {
+          "driver": "NOR",
+          "rank": 6,
+          "score": 0.7011985778977511
+        },
+        {
+          "driver": "PIA",
+          "rank": 7,
+          "score": 0.5716233438047293
+        },
+        {
+          "driver": "HAD",
+          "rank": 8,
+          "score": 0.5682981941073277
+        },
+        {
+          "driver": "LAW",
+          "rank": 9,
+          "score": 0.509902161352813
+        },
+        {
+          "driver": "GAS",
+          "rank": 10,
+          "score": 0.4072506465449478
+        }
+      ],
+      "paired_top10_hits": {
+        "more": 4,
+        "same": 11,
+        "fewer": 1,
+        "mean_delta": 0.1875000000000001,
+        "bootstrap_95_interval": [
+          -0.062499999999999986,
+          0.4375000000000002
+        ]
+      },
+      "kimi_summary": {
+        "mean_predicted_rank": 3.5625,
+        "mean_absolute_rank_error": 4.1875,
+        "predicted_wins": 4,
+        "correctly_predicted_wins": 1
+      }
+    },
+    "relative_season_points": {
+      "config": {
+        "shift": 0.0,
+        "retention": 1.0,
+        "relative": true
+      },
+      "tuning_2025": {
+        "races": 24.0,
+        "top10_precision": 0.6958333333333333,
+        "top10_recall": 0.6958333333333333,
+        "top10_f1": 0.6958333333333333,
+        "top10_exact_match_rate": 0.0,
+        "mean_average_precision_at_10": 0.6365062830687831,
+        "points_weighted_ndcg_at_10": 0.7930152774066586,
+        "points_capture": 0.860973597359736,
+        "mean_top10_rank_error": 2.549520766773163,
+        "winner_accuracy": 0.20833333333333334,
+        "winner_log_loss": 1.8859736962102824
+      },
+      "evaluation_2026": {
+        "races": 16.0,
+        "top10_precision": 0.7125,
+        "top10_recall": 0.7125,
+        "top10_f1": 0.7125,
+        "top10_exact_match_rate": 0.0,
+        "mean_average_precision_at_10": 0.5784300595238095,
+        "points_weighted_ndcg_at_10": 0.6938907155513027,
+        "points_capture": 0.8892326732673269,
+        "mean_top10_rank_error": 3.0679611650485437,
+        "winner_accuracy": 0.0,
+        "winner_log_loss": 2.3027053544098335
+      },
+      "per_race": [
+        {
+          "round": 1,
+          "race_name": "Australian Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.6,
+          "top10_recall": 0.6,
+          "top10_f1": 0.6,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.524047619047619,
+          "points_weighted_ndcg_at_10": 0.679765525462913,
+          "points_capture": 0.8712871287128713,
+          "mean_top10_rank_error": 3.142857142857143,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.2801079461584446,
+          "kimi_predicted_rank": 7,
+          "kimi_actual_rank": 2
+        },
+        {
+          "round": 2,
+          "race_name": "Chinese Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.6,
+          "top10_recall": 0.6,
+          "top10_f1": 0.6,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.32269841269841265,
+          "points_weighted_ndcg_at_10": 0.5335849106599507,
+          "points_capture": 0.7524752475247525,
+          "mean_top10_rank_error": 3.857142857142857,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.8014243348387025,
+          "kimi_predicted_rank": 7,
+          "kimi_actual_rank": 1
+        },
+        {
+          "round": 3,
+          "race_name": "Japanese Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.7,
+          "top10_recall": 0.7,
+          "top10_f1": 0.7,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.7,
+          "points_weighted_ndcg_at_10": 0.7447795023991174,
+          "points_capture": 0.9108910891089109,
+          "mean_top10_rank_error": 2.769230769230769,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.5361977630725527,
+          "kimi_predicted_rank": 7,
+          "kimi_actual_rank": 1
+        },
+        {
+          "round": 4,
+          "race_name": "Miami Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.8,
+          "top10_recall": 0.8,
+          "top10_f1": 0.8000000000000002,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.78,
+          "points_weighted_ndcg_at_10": 0.7954343390891422,
+          "points_capture": 0.9306930693069307,
+          "mean_top10_rank_error": 2.3333333333333335,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.4698909543410834,
+          "kimi_predicted_rank": 7,
+          "kimi_actual_rank": 1
+        },
+        {
+          "round": 5,
+          "race_name": "Canadian Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.6,
+          "top10_recall": 0.6,
+          "top10_f1": 0.6,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.31297619047619046,
+          "points_weighted_ndcg_at_10": 0.47571259288690887,
+          "points_capture": 0.7227722772277227,
+          "mean_top10_rank_error": 4.0,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.2777726089525916,
+          "kimi_predicted_rank": 6,
+          "kimi_actual_rank": 1
+        },
+        {
+          "round": 6,
+          "race_name": "Monaco Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.4,
+          "top10_recall": 0.4,
+          "top10_f1": 0.4000000000000001,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.14619047619047618,
+          "points_weighted_ndcg_at_10": 0.405755533917879,
+          "points_capture": 0.693069306930693,
+          "mean_top10_rank_error": 4.625,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.459766357257505,
+          "kimi_predicted_rank": 7,
+          "kimi_actual_rank": 1
+        },
+        {
+          "round": 7,
+          "race_name": "Barcelona Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.7,
+          "top10_recall": 0.7,
+          "top10_f1": 0.7,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.5830952380952381,
+          "points_weighted_ndcg_at_10": 0.8049475020060991,
+          "points_capture": 0.9108910891089109,
+          "mean_top10_rank_error": 2.769230769230769,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.0602814769686217,
+          "kimi_predicted_rank": 5,
+          "kimi_actual_rank": 16
+        },
+        {
+          "round": 8,
+          "race_name": "Austrian Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.9,
+          "top10_recall": 0.9,
+          "top10_f1": 0.9,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.89,
+          "points_weighted_ndcg_at_10": 0.8424727347885647,
+          "points_capture": 0.9900990099009901,
+          "mean_top10_rank_error": 2.0,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.0390830181552313,
+          "kimi_predicted_rank": 7,
+          "kimi_actual_rank": 3
+        },
+        {
+          "round": 9,
+          "race_name": "British Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.6,
+          "top10_recall": 0.6,
+          "top10_f1": 0.6,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.40630952380952373,
+          "points_weighted_ndcg_at_10": 0.6989546524400173,
+          "points_capture": 0.8514851485148515,
+          "mean_top10_rank_error": 3.5714285714285716,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.437374892149312,
+          "kimi_predicted_rank": 6,
+          "kimi_actual_rank": 15
+        },
+        {
+          "round": 10,
+          "race_name": "Belgian Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.8,
+          "top10_recall": 0.8,
+          "top10_f1": 0.8000000000000002,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.6582142857142856,
+          "points_weighted_ndcg_at_10": 0.7441320085720551,
+          "points_capture": 0.9504950495049505,
+          "mean_top10_rank_error": 2.6666666666666665,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.645080664406399,
+          "kimi_predicted_rank": 7,
+          "kimi_actual_rank": 1
+        },
+        {
+          "round": 11,
+          "race_name": "Hungarian Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.9,
+          "top10_recall": 0.9,
+          "top10_f1": 0.9,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.8521031746031745,
+          "points_weighted_ndcg_at_10": 0.8536417141181961,
+          "points_capture": 0.9801980198019802,
+          "mean_top10_rank_error": 2.5454545454545454,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.1766386408478957,
+          "kimi_predicted_rank": 7,
+          "kimi_actual_rank": 3
+        },
+        {
+          "round": 12,
+          "race_name": "Dutch Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.7,
+          "top10_recall": 0.7,
+          "top10_f1": 0.7,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.5282142857142857,
+          "points_weighted_ndcg_at_10": 0.6765499992739898,
+          "points_capture": 0.9306930693069307,
+          "mean_top10_rank_error": 2.4615384615384617,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 1.9392309197512976,
+          "kimi_predicted_rank": 7,
+          "kimi_actual_rank": 2
+        },
+        {
+          "round": 13,
+          "race_name": "Italian Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.7,
+          "top10_recall": 0.7,
+          "top10_f1": 0.7,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.5684920634920634,
+          "points_weighted_ndcg_at_10": 0.7237163129205219,
+          "points_capture": 0.9108910891089109,
+          "mean_top10_rank_error": 2.769230769230769,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.3671498234988535,
+          "kimi_predicted_rank": 7,
+          "kimi_actual_rank": 1
+        },
+        {
+          "round": 14,
+          "race_name": "Spanish Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.8,
+          "top10_recall": 0.8,
+          "top10_f1": 0.8000000000000002,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.7254365079365078,
+          "points_weighted_ndcg_at_10": 0.7989087773089365,
+          "points_capture": 0.9306930693069307,
+          "mean_top10_rank_error": 2.5,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.209337450396475,
+          "kimi_predicted_rank": 5,
+          "kimi_actual_rank": 1
+        },
+        {
+          "round": 15,
+          "race_name": "Azerbaijan Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.7,
+          "top10_recall": 0.7,
+          "top10_f1": 0.7,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.5000000000000001,
+          "points_weighted_ndcg_at_10": 0.6721111615870553,
+          "points_capture": 0.9306930693069307,
+          "mean_top10_rank_error": 2.923076923076923,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 1.9916818503302856,
+          "kimi_predicted_rank": 2,
+          "kimi_actual_rank": 5
+        },
+        {
+          "round": 16,
+          "race_name": "Bahrain Grand Prix in Malaysia",
+          "races": 1.0,
+          "top10_precision": 0.9,
+          "top10_recall": 0.9,
+          "top10_f1": 0.9,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.7571031746031747,
+          "points_weighted_ndcg_at_10": 0.6517841813894952,
+          "points_capture": 0.9603960396039604,
+          "mean_top10_rank_error": 3.272727272727273,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.1522669694320866,
+          "kimi_predicted_rank": 3,
+          "kimi_actual_rank": 2
+        }
+      ],
+      "upcoming_top10": [
+        {
+          "driver": "VER",
+          "rank": 1,
+          "score": 0.8642213033385269
+        },
+        {
+          "driver": "LEC",
+          "rank": 2,
+          "score": 0.8277570986176269
+        },
+        {
+          "driver": "RUS",
+          "rank": 3,
+          "score": 0.8163879136170269
+        },
+        {
+          "driver": "HAM",
+          "rank": 4,
+          "score": 0.8116813604163122
+        },
+        {
+          "driver": "ANT",
+          "rank": 5,
+          "score": 0.8099010774137428
+        },
+        {
+          "driver": "NOR",
+          "rank": 6,
+          "score": 0.8063230499159502
+        },
+        {
+          "driver": "PIA",
+          "rank": 7,
+          "score": 0.672608283104228
+        },
+        {
+          "driver": "HAD",
+          "rank": 8,
+          "score": 0.5962043548880477
+        },
+        {
+          "driver": "LAW",
+          "rank": 9,
+          "score": 0.4825625371041102
+        },
+        {
+          "driver": "LIN",
+          "rank": 10,
+          "score": 0.3878872269704622
+        }
+      ],
+      "paired_top10_hits": {
+        "more": 0,
+        "same": 16,
+        "fewer": 0,
+        "mean_delta": 0.0,
+        "bootstrap_95_interval": [
+          0.0,
+          0.0
+        ]
+      },
+      "kimi_summary": {
+        "mean_predicted_rank": 6.0625,
+        "mean_absolute_rank_error": 5.4375,
+        "predicted_wins": 0,
+        "correctly_predicted_wins": 0
+      }
+    },
+    "combined": {
+      "config": {
+        "shift": 0.18,
+        "retention": 0.75,
+        "relative": true
+      },
+      "tuning_2025": {
+        "races": 24.0,
+        "top10_precision": 0.6999999999999997,
+        "top10_recall": 0.6999999999999997,
+        "top10_f1": 0.6999999999999997,
+        "top10_exact_match_rate": 0.0,
+        "mean_average_precision_at_10": 0.6396279761904761,
+        "points_weighted_ndcg_at_10": 0.7963251129271663,
+        "points_capture": 0.8572607260726074,
+        "mean_top10_rank_error": 2.5705128205128207,
+        "winner_accuracy": 0.20833333333333334,
+        "winner_log_loss": 1.8794349612498182
+      },
+      "evaluation_2026": {
+        "races": 16.0,
+        "top10_precision": 0.7312500000000001,
+        "top10_recall": 0.7312500000000001,
+        "top10_f1": 0.7312500000000001,
+        "top10_exact_match_rate": 0.0,
+        "mean_average_precision_at_10": 0.6006001984126985,
+        "points_weighted_ndcg_at_10": 0.7292080994165451,
+        "points_capture": 0.9022277227722775,
+        "mean_top10_rank_error": 2.9753694581280787,
+        "winner_accuracy": 0.0625,
+        "winner_log_loss": 2.223368060025135
+      },
+      "per_race": [
+        {
+          "round": 1,
+          "race_name": "Australian Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.6,
+          "top10_recall": 0.6,
+          "top10_f1": 0.6,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.524047619047619,
+          "points_weighted_ndcg_at_10": 0.6943805792641047,
+          "points_capture": 0.8712871287128713,
+          "mean_top10_rank_error": 3.142857142857143,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.365692801881159,
+          "kimi_predicted_rank": 6,
+          "kimi_actual_rank": 2
+        },
+        {
+          "round": 2,
+          "race_name": "Chinese Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.6,
+          "top10_recall": 0.6,
+          "top10_f1": 0.6,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.3296428571428571,
+          "points_weighted_ndcg_at_10": 0.5703686153000597,
+          "points_capture": 0.8118811881188119,
+          "mean_top10_rank_error": 3.7142857142857144,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.539568250172097,
+          "kimi_predicted_rank": 6,
+          "kimi_actual_rank": 1
+        },
+        {
+          "round": 3,
+          "race_name": "Japanese Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.7,
+          "top10_recall": 0.7,
+          "top10_f1": 0.7,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.7,
+          "points_weighted_ndcg_at_10": 0.7561507499598775,
+          "points_capture": 0.9108910891089109,
+          "mean_top10_rank_error": 2.6153846153846154,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.2676252853699275,
+          "kimi_predicted_rank": 5,
+          "kimi_actual_rank": 1
+        },
+        {
+          "round": 4,
+          "race_name": "Miami Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.8,
+          "top10_recall": 0.8,
+          "top10_f1": 0.8000000000000002,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.78,
+          "points_weighted_ndcg_at_10": 0.8000986063391942,
+          "points_capture": 0.9306930693069307,
+          "mean_top10_rank_error": 2.3333333333333335,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.170582436313157,
+          "kimi_predicted_rank": 5,
+          "kimi_actual_rank": 1
+        },
+        {
+          "round": 5,
+          "race_name": "Canadian Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.7,
+          "top10_recall": 0.7,
+          "top10_f1": 0.7,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.4163095238095238,
+          "points_weighted_ndcg_at_10": 0.5909585647790249,
+          "points_capture": 0.7821782178217822,
+          "mean_top10_rank_error": 3.8461538461538463,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 1.950767565754785,
+          "kimi_predicted_rank": 2,
+          "kimi_actual_rank": 1
+        },
+        {
+          "round": 6,
+          "race_name": "Monaco Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.4,
+          "top10_recall": 0.4,
+          "top10_f1": 0.4000000000000001,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.23285714285714282,
+          "points_weighted_ndcg_at_10": 0.6794328046980761,
+          "points_capture": 0.693069306930693,
+          "mean_top10_rank_error": 4.0,
+          "winner_accuracy": 1.0,
+          "winner_log_loss": 1.9665725304448844,
+          "kimi_predicted_rank": 1,
+          "kimi_actual_rank": 1
+        },
+        {
+          "round": 7,
+          "race_name": "Barcelona Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.8,
+          "top10_recall": 0.8,
+          "top10_f1": 0.8000000000000002,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.5475396825396825,
+          "points_weighted_ndcg_at_10": 0.7271625660506829,
+          "points_capture": 0.9702970297029703,
+          "mean_top10_rank_error": 2.8333333333333335,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.0081238699274038,
+          "kimi_predicted_rank": 1,
+          "kimi_actual_rank": 16
+        },
+        {
+          "round": 8,
+          "race_name": "Austrian Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.9,
+          "top10_recall": 0.9,
+          "top10_f1": 0.9,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.9,
+          "points_weighted_ndcg_at_10": 0.8311033330117077,
+          "points_capture": 0.9900990099009901,
+          "mean_top10_rank_error": 2.0,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.1206950168556706,
+          "kimi_predicted_rank": 2,
+          "kimi_actual_rank": 3
+        },
+        {
+          "round": 9,
+          "race_name": "British Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.7,
+          "top10_recall": 0.7,
+          "top10_f1": 0.7,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.47297619047619055,
+          "points_weighted_ndcg_at_10": 0.7074929855597027,
+          "points_capture": 0.8811881188118812,
+          "mean_top10_rank_error": 3.8461538461538463,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.5886636787037394,
+          "kimi_predicted_rank": 2,
+          "kimi_actual_rank": 15
+        },
+        {
+          "round": 10,
+          "race_name": "Belgian Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.8,
+          "top10_recall": 0.8,
+          "top10_f1": 0.8000000000000002,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.6582142857142856,
+          "points_weighted_ndcg_at_10": 0.764581451538916,
+          "points_capture": 0.9504950495049505,
+          "mean_top10_rank_error": 2.3333333333333335,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.3566361832124096,
+          "kimi_predicted_rank": 5,
+          "kimi_actual_rank": 1
+        },
+        {
+          "round": 11,
+          "race_name": "Hungarian Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.9,
+          "top10_recall": 0.9,
+          "top10_f1": 0.9,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.8521031746031745,
+          "points_weighted_ndcg_at_10": 0.7697794158085938,
+          "points_capture": 0.9801980198019802,
+          "mean_top10_rank_error": 2.5454545454545454,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.5454768582720693,
+          "kimi_predicted_rank": 5,
+          "kimi_actual_rank": 3
+        },
+        {
+          "round": 12,
+          "race_name": "Dutch Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.7,
+          "top10_recall": 0.7,
+          "top10_f1": 0.7,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.5282142857142857,
+          "points_weighted_ndcg_at_10": 0.665322773146978,
+          "points_capture": 0.9306930693069307,
+          "mean_top10_rank_error": 2.6153846153846154,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.0436034580776776,
+          "kimi_predicted_rank": 6,
+          "kimi_actual_rank": 2
+        },
+        {
+          "round": 13,
+          "race_name": "Italian Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.7,
+          "top10_recall": 0.7,
+          "top10_f1": 0.7,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.6018253968253967,
+          "points_weighted_ndcg_at_10": 0.8089699145392398,
+          "points_capture": 0.9108910891089109,
+          "mean_top10_rank_error": 2.6153846153846154,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.1503491211327677,
+          "kimi_predicted_rank": 5,
+          "kimi_actual_rank": 1
+        },
+        {
+          "round": 14,
+          "race_name": "Spanish Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.8,
+          "top10_recall": 0.8,
+          "top10_f1": 0.8000000000000002,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.7254365079365078,
+          "points_weighted_ndcg_at_10": 0.7873108175305413,
+          "points_capture": 0.9306930693069307,
+          "mean_top10_rank_error": 2.5,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 1.9975202579970168,
+          "kimi_predicted_rank": 3,
+          "kimi_actual_rank": 1
+        },
+        {
+          "round": 15,
+          "race_name": "Azerbaijan Grand Prix",
+          "races": 1.0,
+          "top10_precision": 0.7,
+          "top10_recall": 0.7,
+          "top10_f1": 0.7,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.55,
+          "points_weighted_ndcg_at_10": 0.7286131800558117,
+          "points_capture": 0.9306930693069307,
+          "mean_top10_rank_error": 3.076923076923077,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.025923286190033,
+          "kimi_predicted_rank": 1,
+          "kimi_actual_rank": 5
+        },
+        {
+          "round": 16,
+          "race_name": "Bahrain Grand Prix in Malaysia",
+          "races": 1.0,
+          "top10_precision": 0.9,
+          "top10_recall": 0.9,
+          "top10_f1": 0.9,
+          "top10_exact_match_rate": 0.0,
+          "mean_average_precision_at_10": 0.7904365079365079,
+          "points_weighted_ndcg_at_10": 0.7856032330822106,
+          "points_capture": 0.9603960396039604,
+          "mean_top10_rank_error": 2.909090909090909,
+          "winner_accuracy": 0.0,
+          "winner_log_loss": 2.4760883600973664,
+          "kimi_predicted_rank": 1,
+          "kimi_actual_rank": 2
+        }
+      ],
+      "upcoming_top10": [
+        {
+          "driver": "ANT",
+          "rank": 1,
+          "score": 0.8385210173057837
+        },
+        {
+          "driver": "VER",
+          "rank": 2,
+          "score": 0.8100269256724855
+        },
+        {
+          "driver": "LEC",
+          "rank": 3,
+          "score": 0.8040879703026161
+        },
+        {
+          "driver": "RUS",
+          "rank": 4,
+          "score": 0.8024001914252037
+        },
+        {
+          "driver": "HAM",
+          "rank": 5,
+          "score": 0.7938483509715261
+        },
+        {
+          "driver": "NOR",
+          "rank": 6,
+          "score": 0.7827337635760148
+        },
+        {
+          "driver": "PIA",
+          "rank": 7,
+          "score": 0.6226244496783807
+        },
+        {
+          "driver": "HAD",
+          "rank": 8,
+          "score": 0.6219919321054539
+        },
+        {
+          "driver": "LAW",
+          "rank": 9,
+          "score": 0.5039536388243739
+        },
+        {
+          "driver": "HUL",
+          "rank": 10,
+          "score": 0.4003203994892209
+        }
+      ],
+      "paired_top10_hits": {
+        "more": 3,
+        "same": 13,
+        "fewer": 0,
+        "mean_delta": 0.18750000000000003,
+        "bootstrap_95_interval": [
+          0.0,
+          0.37500000000000017
+        ]
+      },
+      "kimi_summary": {
+        "mean_predicted_rank": 3.5,
+        "mean_absolute_rank_error": 4.25,
+        "predicted_wins": 4,
+        "correctly_predicted_wins": 1
+      }
+    }
+  },
+  "verification": [
+    "Baseline matches unmodified production backtester exactly.",
+    "Upcoming baseline scores and ranks match published Singapore report exactly.",
+    "Race keys and driver entries are unique."
+  ]
+}

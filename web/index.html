@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>F1 Predictor Dashboard</title>
+    <link rel="stylesheet" href="./styles.css?v=7">
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Primary">
+        <div class="brand">
+          <div class="brand-mark">R</div>
+          <div>
+            <strong>RaceIQ</strong>
+            <span>F1 predictor</span>
+          </div>
+        </div>
+        <nav class="nav-list" aria-label="Current sections">
+          <a class="active" href="./index.html"><span>Dashboard</span><b>10</b></a>
+          <a href="./stats.html"><span>Race Stats</span></a>
+          <a href="./stats.html#model"><span>Model output</span></a>
+        </nav>
+        <div class="sidebar-note">
+          <span>Local reports</span>
+          <strong id="lastUpdated">Loading</strong>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <div>
+            <span class="eyebrow">Next Race Forecast</span>
+            <h1>Race predictions</h1>
+          </div>
+          <div class="topbar-actions">
+            <button class="primary-button" type="button" title="Refresh dashboard" id="refreshButton">Refresh</button>
+          </div>
+        </header>
+
+        <p id="updateStatus" class="update-status" role="status">Checking automatic updates…</p>
+        <section class="race-banner">
+          <div class="race-banner__content">
+            <div>
+              <div class="race-kicker" id="raceRound">Round</div>
+              <h2 id="raceName">Loading race</h2>
+              <p id="raceLocation">Loading circuit</p>
+            </div>
+            <div class="race-detail-row">
+              <div>
+                <span>Race start</span>
+                <strong id="raceTime">--</strong>
+              </div>
+              <div>
+                <span>Qualifying</span>
+                <strong id="qualifyingTime">--</strong>
+              </div>
+              <div>
+                <span>Track</span>
+                <strong id="trackName">--</strong>
+              </div>
+            </div>
+          </div>
+          <div class="race-banner__visual">
+            <img id="trackMap" alt="Circuit map" src="">
+            <a id="trackCredit" target="_blank" rel="noreferrer">Track map source</a>
+          </div>
+        </section>
+
+        <section class="sprint-callout" id="sprintCallout" aria-labelledby="sprintTitle" hidden>
+          <div class="sprint-callout__icon" aria-hidden="true">↯</div>
+          <div>
+            <span class="eyebrow">Sprint Weekend</span>
+            <h3 id="sprintTitle">Sprint race scheduled</h3>
+            <p id="sprintTime"></p>
+            <p id="sprintModelStatus"></p>
+            <div class="sprint-inputs">
+              <span id="sprintQualifyingStatus"></span>
+              <span id="sprintRaceStatus"></span>
+            </div>
+          </div>
+        </section>
+
+        <section class="metric-grid" aria-label="Race weather and model summary">
+          <article class="metric-card">
+            <span>Rain Probability</span>
+            <strong id="rainProbability">--</strong>
+            <small id="rainLabel">Forecast unavailable</small>
+          </article>
+          <article class="metric-card">
+            <span>Air Temperature</span>
+            <strong id="airTemp">--</strong>
+            <small>Race-window estimate</small>
+          </article>
+          <article class="metric-card">
+            <span>Wind</span>
+            <strong id="windSpeed">--</strong>
+            <small id="windLabel">Weather model input</small>
+          </article>
+        </section>
+
+        <section class="content-grid">
+          <div class="panel podium-panel">
+            <div class="panel-head">
+              <div>
+                <span class="eyebrow">Highest Confidence</span>
+                <h3>Projected Podium</h3>
+              </div>
+            </div>
+            <div class="podium" id="podium"></div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head table-head">
+            <div>
+              <span class="eyebrow">Model Output</span>
+              <h3>Predicted Points Finishers</h3>
+            </div>
+            <div class="prediction-meta">
+              <div class="legend">
+                <span><i class="top10-dot"></i> Top-10 probability</span>
+                <span><i class="win-dot"></i> Win probability</span>
+              </div>
+            </div>
+          </div>
+          <div class="table-tools">
+            <div class="table-summary">Top 10 predicted points finishers</div>
+            <div class="table-source">Sorted by model rank</div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Rank</th>
+                  <th>Driver</th>
+                  <th>Team</th>
+                  <th>Top-10</th>
+                  <th>Win</th>
+                  <th>Score</th>
+                </tr>
+              </thead>
+              <tbody id="predictionRows"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./app.js?v=8"></script>
+  </body>
+</html>

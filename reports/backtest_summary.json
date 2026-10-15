@@ -1,0 +1,13 @@
+{
+  "mean_average_precision_at_10": 0.6099786324786326,
+  "mean_top10_rank_error": 2.736220472440945,
+  "points_capture": 0.8723026148768724,
+  "points_weighted_ndcg_at_10": 0.7589825272652301,
+  "races": 39.0,
+  "top10_exact_match_rate": 0.0,
+  "top10_f1": 0.6974358974358974,
+  "top10_precision": 0.6974358974358974,
+  "top10_recall": 0.6974358974358974,
+  "winner_accuracy": 0.15384615384615385,
+  "winner_log_loss": 2.0977720956349546
+}

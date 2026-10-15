@@ -1,0 +1,13 @@
+[project]
+name = "f1-result-predictor"
+version = "0.1.0"
+description = "Walk-forward Formula 1 race result predictor and backtester."
+requires-python = ">=3.11"
+
+[project.scripts]
+f1-predict = "f1_predictor.cli:main"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
